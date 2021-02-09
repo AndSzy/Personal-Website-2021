@@ -1,0 +1,507 @@
+:root {
+  --primary-color: rgba(59,89,152);
+  --secondary-color: rgba(139,157,195);
+  --third-color: rgba(223,227,238);
+  --fourth-color: rgba(247,247,247);
+  --overlay-color: rgba(24, 39, 51, 0.85);
+  --btn-color: #003ca1;
+  --btn-hover-color: #0045b8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
+  background: var(--primary-color);
+}
+
+body.color-body {
+  background: #fff;
+}
+
+body.fadeout-body {
+  transform: translateX(-100%);
+  transition: transform 0.75s linear;
+}
+
+.navbar-container {
+  display: flex;
+  position: sticky;
+  left: 0;
+  top: 0;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 2;
+}
+
+.navbar-container .navbar {
+  background-color:var(--secondary-color);
+  height: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  transition: all 0.2s ease 0.2s;
+  position: relative;
+  top: 0;
+  transition: top 0.5s ease-out, background-color 0.5s linear;
+}
+
+.navbar-container-active .navbar {
+  top: -50px;
+  transition: top 0.5s ease;
+}
+
+.navbar-container-hide .navbar,
+.navbar-container-hide .navbar .logo .colors .color,
+.navbar-container-hide .navbar .logo h1 {
+  background-color: transparent;
+  color: transparent;
+  border: none;
+  transition: all 0.35s linear;
+}
+
+.hamburger-btn {
+  display: block;
+  flex: none;
+  width: 50px;
+  height: 50px;
+  border: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  outline: none;
+  cursor: pointer;
+  background: transparent;
+  z-index: 2;
+}
+
+.hamburger-btn .hamburger-box {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: var(--secondary-color);
+}
+
+.hamburger-btn .hamburger-box .hamburger-inner {
+  height: 3px;
+  background: #fff;
+  position: absolute;
+  left: 5px;
+  right: 5px;
+  top: 25px;
+  transform: translateY(-50%);
+  transition: all 0.4s ease;
+}
+
+.hamburger-btn .hamburger-box .hamburger-inner:before,
+.hamburger-btn .hamburger-box .hamburger-inner:after {
+  content: '';
+  height: 3px;
+  background: #fff;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -10px;
+}
+
+.hamburger-btn .hamburger-box .hamburger-inner:after {
+  top: 10px;
+}
+
+.hamburger-active .hamburger-box .hamburger-inner {
+  transform: rotate(135deg);
+}
+
+.hamburger-active .hamburger-box .hamburger-inner:before,
+.hamburger-active .hamburger-box .hamburger-inner:after {
+  top: 0;
+  transform: rotate(90deg);
+}
+
+.hamburger-active:hover .hamburger-box .hamburger-inner {
+  transform: rotate(225deg);
+}
+
+.navbar .logo {
+  display: flex;
+}
+
+.navbar .logo .colors {
+  display: flex;
+  align-items: center;
+}
+
+.navbar .logo .colors .color {
+  width: 20px;
+  height: 20px;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  margin-right: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.navbar .logo .colors .color:hover {
+  transform: scale(1.1);
+}
+
+.color-one {
+  background: #3b5998;
+}
+.color-two {
+  background: #f64c72;
+}
+.color-three {
+  background: #008744;
+}
+
+.navbar .logo h1 {
+  margin: 0 20px;
+  color: inherit;
+  transition: all 0.5s linear;
+}
+
+.navbar .logo h1 a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Overlay */
+
+.overlay {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  visibility: hidden;
+  z-index: 1;
+}
+
+.overlay > div {
+  background-color: var(--overlay-color);
+  width: 3000px;
+  height: 3000px;
+  flex: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: scale(0);
+  transition: all 0.75s ease;
+}
+
+.overlay > div >div {
+  opacity: 0;
+  transition: all 0.4s ease ;
+}
+
+
+.overlay > div > div > ul > li {
+  list-style: none;
+  color: #fff;
+  font-size: 1.5rem;
+  padding: 1rem;
+}
+
+.overlay > div > div > ul > li > a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.4s ease;
+}
+
+.overlay > div > div > ul > li > a:hover {
+  color: var(--secondary-color);
+}
+
+.overlay-active {
+  visibility: visible;
+}
+
+
+.overlay-active > div {
+  transform: scale(1);
+  transition: all 0.75s ease;
+}
+
+.overlay-active > div > div {
+  opacity: 1;
+  transition: opacity 0.4s ease 0.4s;
+}
+
+
+/* Main Section */
+
+.main {
+  height: 100vh;
+  min-height: 500px;
+  background: url(./img/keyboard-mini.jpg) no-repeat center center/cover;
+  color: #fff;
+  position: relative;
+}
+
+.main-overlay-background {
+  background: var(--primary-color);
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  opacity: 0.8;
+}
+
+.main .main-overlay-background .container {
+  max-width: 960px;
+  height: 100%;
+  padding: 0 200px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-content: flex-start;
+  text-align: left;
+  position: absolute;
+  left: 0;
+}
+
+.main .main-overlay-background .container h1 {
+  padding-top: 4rem;
+  font-size: 4rem;
+}
+
+.main .main-overlay-background .container p {
+  font-size: 1.3rem;
+}
+
+.main .main-overlay-background .container .main-buttons .btn {
+  display: inline-block;
+  width: 30%;
+  border: none;
+  border-radius: 4px;
+  background: var(--btn-color);
+  padding: 0.75rem 1.5rem;
+  margin: 1rem 0;
+  transition: all 0.5s ease-in-out;
+  text-decoration: none;
+  color: #fff;
+}
+
+.main .main-overlay-background .container .btn:hover {
+  background: var(--btn-hover-color);
+}
+
+/* Projects Section */
+
+.projects {
+  background: var(--third-color);
+  color: var(--btn-color);
+}
+
+.projects .container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 2rem 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.projects .container.fadeout {
+  opacity: 0;
+  transition: all 0.3s linear;
+}
+
+.projects .container .projects-title {
+  text-transform: uppercase;
+  position: relative;
+}
+.projects .container .projects-title:after {
+  content: '';
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  width: 34px;
+  height: 7px;
+  background-color: #fbe10f;
+  transform: skewY(-16deg) translateX(-50%);
+}
+
+
+
+.projects .container .project-content {
+  position: relative;
+  padding: 3.25rem 3.3vw;
+}
+
+.projects .container .project-content a {
+  text-decoration: none;
+  color: inherit;
+  font-size: 100px;
+  font-weight: bold;
+}
+
+.projects .container .project-content .project-thumb {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%) translateY(3rem);
+  opacity: 0;
+  transition: all 0.4s cubic-bezier(0.52, 0.01, 0.16, 1);
+}
+
+.projects .container .project-content:hover .project-thumb{
+  transform: translateX(-50%) translateY(-50%) translateY(0);
+  opacity: 1;
+  transition: all 0.4s cubic-bezier(0.52, 0.01, 0.16, 1);
+  cursor: pointer;
+}
+
+
+.projects .container .project-content .project-thumb img {
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+/* Contact Section */
+
+.contact {
+  height: 100vh;
+  background: var(--fourth-color);
+  color: #000;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.contact .container-contact {
+  margin-bottom: 150px;
+}
+
+.contact .container-contact h4 {
+  font-size: 24px;
+  margin-bottom: 50px;
+}
+
+.contact .container-contact a {
+  text-decoration: none;
+  color: inherit;
+  font-size: 80px;
+  line-height: 14px;
+  font-weight: bold;
+}
+
+.contact .container-social h5 {
+  font-size: 11px;
+  padding-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.contact .container-social a {
+  text-decoration: none;
+  color: inherit;
+}
+
+
+
+
+
+@media(max-width: 1100px) {
+  .main .main-overlay-background .container {
+    padding: 0 200px 0 100px;
+  }
+
+  .main .main-overlay-background .container .main-buttons .btn {
+    width: 180px;
+  }
+
+
+}
+
+@media(max-width: 700px) {
+  .overlay > div {
+    transform: translateX(-1000px);
+    transition: all 0.75s ease;
+    width: 1000px;
+    height: 1000px;
+    border-radius: 0;
+  }
+
+  .overlay-active > div {
+    transform: translateX(0);
+    transition: all 0.75s ease;
+  }
+
+  .main .main-overlay-background .container {
+    padding: 0 25px;
+  }
+
+  .main .main-overlay-background .container h1 {
+    margin-bottom: 25px;
+    padding-top: 3rem;
+    font-size: 3rem;
+  }
+
+  .main .main-overlay-background .container p {
+    font-size: 1rem;
+  }
+
+  .main .main-overlay-background .container .main-buttons .btn {
+    width: 150px;
+    padding-left: 0.5rem;
+  }
+
+
+  .main .main-overlay-background .container p {
+    font-size: 1.3rem;
+  }
+
+
+
+
+  .projects .container .project-content a {
+    font-size: 60px;
+  }
+
+  .projects .container .project-content .project-thumb {
+    display: none;
+  }
+
+  .projects .container .project-content {
+    position: relative;
+    padding: 2.25rem 3.3vw;
+  }
+
+
+
+
+
+
+
+  .contact .container-contact h4 {
+    font-size: 18px;
+  }
+
+  .contact .container-contact a {
+    font-size: 30px;
+  }
+
+}

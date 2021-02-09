@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://kit.fontawesome.com/88e3276c80.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <title>Hangman Multiplayer</title>
+</head>
+<body>
+  <div class="settings-container hide" id="settings-container">
+    <form id="settings-form">
+      <div class="setting">
+        <div>Difficulty</div>
+        <label class="switch">
+          <input type="checkbox" id="difficulty">
+          <span class="slider"></span>
+          <span class="on">Easy</span>
+          <span class="off">Hard</span>
+        </label>
+      </div>
+      <div class="setting">
+        <div>Players</div>
+        <label class="switch">
+          <input type="checkbox" id="players" checked>
+          <span class="slider"></span>
+          <span class="on">One</span>
+          <span class="off">Two</span>
+        </label>
+      </div>
+      <div class="setting">
+        <div>Time</div>
+        <label class="switch">
+          <input type="checkbox" id="time" checked>
+          <span class="slider"></span>
+          <span class="on">On</span>
+          <span class="off">Off</span>
+        </label>
+      </div>
+    </form>
+  </div>
+  <button class="settings-btn" id="settings-btn"><i class="fas fa-cog"></i></button>
+  <h3 class="timer" id="timer"></h3>
+  <section class="heading-container">
+    <h1>Hangman</h1>
+    <p>Find the hidden word - Enter a letter</p>
+  </section>
+  <section class="word-container" id="word-container">
+    <div class="secret-word" id="secret-word">
+    </div>
+    <div class="category-container">
+      <p>CATEGORY:</p>
+      <p id="category"></p>
+    </div>
+  </section>
+
+  <div class="mobile-input-container">
+    <input type="text" id="mobile-input">
+    <p>Write a letter</p>
+  </div>
+  <section class="players-container">
+    <div class="player" id="player-one">
+      <h3>Player One</h3>
+      <svg height="250" width="200" class="figure-container">
+        <line x1="60" y1="20" x2="140" y2="20" />
+        <line x1="140" y1="20" x2="140" y2="50" />
+        <line x1="60" y1="20" x2="60" y2="230" />
+        <line x1="20" y1="230" x2="100" y2="230" />
+        <circle cx="140" cy="70" r="20" class="figure-part-one" />
+        <line x1="140" y1="90" x2="140" y2="150" class="figure-part-one" />
+        <line x1="140" y1="120" x2="120" y2="100" class="figure-part-one" />
+        <line x1="140" y1="120" x2="160" y2="100" class="figure-part-one" />
+        <line x1="140" y1="150" x2="120" y2="180" class="figure-part-one" />
+        <line x1="140" y1="150" x2="160" y2="180" class="figure-part-one" />
+      </svg>
+    </div>
+    <div class="player non-active" id="player-two">
+      <h3>Player Two</h3>
+      <svg height="250" width="200" class="figure-container">
+        <line x1="60" y1="20" x2="140" y2="20" />
+        <line x1="140" y1="20" x2="140" y2="50" />
+        <line x1="60" y1="20" x2="60" y2="230" />
+        <line x1="20" y1="230" x2="100" y2="230" />
+        <circle cx="140" cy="70" r="20" class="figure-part-two" />
+        <line x1="140" y1="90" x2="140" y2="150" class="figure-part-two" />
+        <line x1="140" y1="120" x2="120" y2="100" class="figure-part-two" />
+        <line x1="140" y1="120" x2="160" y2="100" class="figure-part-two" />
+        <line x1="140" y1="150" x2="120" y2="180" class="figure-part-two" />
+        <line x1="140" y1="150" x2="160" y2="180" class="figure-part-two" />
+      </svg>
+    </div>
+  </section>
+  <section class="wrong-letters-container">
+    <p>Wrong:</p>
+    <div id="wrong-letters">
+    </div>
+  </section>
+  <div class="notification-container" id="notification-container">
+    <h4>You already used this letter.</h4>
+  </div>
+  <div class="popup-container" id="popup-container">
+    <div class="popup">
+      <h2 id="popup-title"></h2>
+      <h4 id="winner"></h4>
+      <button id="play-again">Play Again</button>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

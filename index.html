@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <title>Andrzej Szycher</title>
+</head>
+<body>
+
+  <div class="navbar-container" id="navbar-container">
+    <button class="hamburger-btn" id="hamburger-btn">
+      <div class="hamburger-box">
+        <div class="hamburger-inner"></div>
+      </div>
+    </button>
+    <nav class="navbar" id="navbar">
+      <div class="logo">
+        <div class="colors">
+          <div class="color color-one" id="color-one"></div>
+          <div class="color color-two" id="color-two"></div>
+          <div class="color color-three" id="color-three"></div>
+        </div>
+        <h1><a href="https://github.com/AndSzy"  target="_blank">AndSzy</a></h1>
+      </div>
+    </nav>
+  </div>
+
+  <div class="overlay" id="overlay">
+    <div>
+      <div>
+        <ul class="navigation-list">
+          <li><a href="#main" class="smooth">Home</a></li>
+          <li><a href="#projects" class="smooth">Projects</a></li>
+          <li><a href="#contact" class="smooth">Contact</a></li>
+      </div>
+      </ul>
+    </div>
+  </div>
+
+  <section class="main" id="main">
+    <div class="main-overlay-background">
+      <div class="container">
+        <h1 id="trigger">Welcome</h1>
+        <p>My name is Andrzej, I was born in Poland, but currently I am staying in the United Kingdom. I spend my days crafting websites and playing with code.</p>
+        <p>Check out my projects and feel free to contact me if you have any questions.</p>
+        <div class="main-buttons">
+          <a href="#projects" class="btn smooth">Projects</a>
+          <a href="#contact" class="btn smooth">Contact</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="projects" id="projects">
+    <div class="container" id="projects-container">
+      <h3 class="projects-title">Select Projects</h3>
+
+      <div class="project-content">
+        <a href="projects/thedashboard.html" class="project-name">The Dashboard</a>
+        <div class="project-thumb">
+<!-- Visible only over 1000 px change width and height-->
+          <img src="img/dashboard.png" alt="#" width="205.5" height="210">
+        </div>
+      </div>
+
+      <div class="project-content">
+        <a href="projects/thecircle.html" class="project-name">The Circle</a>
+        <div class="project-thumb">
+<!-- Visible only over 1000 px change width and height-->
+          <img src="img/friendship.png" alt="#" width="205.5" height="210">
+        </div>
+      </div>
+
+      <div class="project-content">
+        <a href="projects/propertyblog.html" class="project-name">Property Blog</a>
+        <div class="project-thumb">
+<!-- Visible only over 1000 px change width and height-->
+          <img src="img/property.png" alt="#" width="205.5" height="210">
+        </div>
+      </div>
+      <div class="project-content">
+        <a href="projects/findproperty.html" class="project-name">Find a Property</a>
+        <div class="project-thumb">
+<!-- Visible only over 1000 px change width and height-->
+          <img src="img/search.png" alt="#" width="205.5" height="210">
+        </div>
+      </div>
+      <div class="project-content">
+        <a href="projects/hangman.html" class="project-name">The Hangman</a>
+        <div class="project-thumb">
+<!-- Visible only over 1000 px change width and height-->
+          <img src="img/hangman.png" alt="#" width="205.5" height="210">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="container-contact">
+      <h4 class="contact-us">Contact me</h4>
+      <a href="mailto: hello@andszy.com" class="contact-mail">
+        <span>hello@andszy.com</span>
+      </a>
+    </div>
+    <div class="container-social">
+      <h5>GitHub</h5>
+      <a href="https://github.com/AndSzy" target="_blank">
+        <i class="fab fa-github fa-3x"></i>
+      </a>
+    </div>
+  </section>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/88e3276c80.js" crossorigin="anonymous"></script>
+  <script src="script.js"></script>
+</body>
+</html>

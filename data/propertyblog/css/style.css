@@ -1,0 +1,66 @@
+
+/* FOOTER */
+
+footer {
+  color: #fff;
+}
+
+/* MORTAGE CALCULATOR */
+
+#monthly, #total {
+  background: none;
+  border: none;
+  width:auto;
+  font-size: 1.2rem;
+}
+
+#monthlyLabel, #totalLabel {
+  align-self: center;
+  font-size: 1.1rem;
+}
+
+/* BLOG POSTS - keeping height equal to right container*/
+
+.blogPostsHeight {
+  
+}
+
+/* CAROUSEL */
+
+
+/* Changing colors of arrows */
+
+.carousel-control-prev-icon  {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%230275d8' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E") !important;
+}
+
+
+.carousel-control-next-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%230275d8' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E") !important;
+}
+
+
+/* MODAL */
+
+.modal-full, .modal-content {
+  min-height: 90vh;
+  min-width: 80vw;
+  max-height: 95vh;
+}
+
+
+
+
+
+
+
+
+
+/* MEDIA QUERRIES */
+
+
+@media (min-width: 992px) {
+  .carousel-control-prev, .carousel-control-next {
+    display: none;
+  }
+}
